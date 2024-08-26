@@ -8,10 +8,15 @@ The primary goal of this project is to create a lightweight GKE cluster that dev
 For production environments, additional configurations and security measures are required to ensure robustness and safety, including but not limited to:
 
 **Namespace Management**: Proper use of Kubernetes namespaces to isolate and manage resources effectively.
+
 **Network Policies**: Implement network policies to control traffic flow between pods and minimize the attack surface.
+
 **Calico or Cilium**: Consider using Calico or Cilium for advanced networking and network policy enforcement.
+
 **Google Cloud Armor (WAF)**: Set up Google Cloud Armor for Web Application Firewall (WAF) capabilities to protect against external threats targeting your Ingress.
+
 **Ingress and Egress Controls**: Use Cloud NAT or other mechanisms to manage outbound traffic securely.
+
 **Monitoring and Logging**: Implement comprehensive monitoring (e.g., Stackdriver, Prometheus) and logging (e.g., ELK stack, Google Cloud Logging) to observe the cluster's health and detect anomalies.
 
 ## Install Gcloud CLI
@@ -134,6 +139,7 @@ NAME         TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
 go-gin-app   LoadBalancer   xx.xx.xx.xx      xx.xx.xx.xx   80:31442/TCP   30s
 kubernetes   ClusterIP      xx.xx.xx.xx      <none>          443/TCP       11m
 ```
+
 ### Open your browser and key in the External IP from the Go app service.
 http://{PUBLIC_IP}/health-check
 
