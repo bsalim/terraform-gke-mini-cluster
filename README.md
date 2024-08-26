@@ -6,6 +6,16 @@ The primary goal of this project is to create a lightweight GKE cluster that dev
 
 
 ## Important Considerations for Production
+
+Please change the following settings on gke-cluster/main.tf
+```bash
+delete_protection = true
+
+# Under node_config
+preemptible = false
+# Optionally you can set spot = true
+spot = true
+```
 For production environments, additional configurations and security measures are required to ensure robustness and safety, including but not limited to:
 
 **Namespace Management**: Proper use of Kubernetes namespaces to isolate and manage resources effectively.
