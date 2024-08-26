@@ -123,4 +123,20 @@ docker build -t gcr.io/${PROJECT_ID}/go-gin-app:v1 .
 docker push gcr.io/${PROJECT_ID}/go-gin-app:v1
 ```
 
-<p>Feel free to customize the content further based on your specific project needs or add more details as necessary.</p>
+### Let work on the Go pod & service
+```bash
+cd kubernetes
+kubectl apply -f deployment.yaml # Output deployment.apps/go-gin-app created
+kubectl apply -f service.yaml # Output service/go-gin-app created
+
+# Run kubectl get services to verify, it will take a while to get the External-IP
+NAME         TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+go-gin-app   LoadBalancer   xx.xx.xx.xx      xx.xx.xx.xx   80:31442/TCP   30s
+kubernetes   ClusterIP      xx.xx.xx.xx      <none>          443/TCP       11m
+```
+### Open your browser and key in the External IP from the Go app service.
+http://{PUBLIC_IP}/health-check
+
+<p>Feel free to customize the content further based on your specific project needs or add more details as necessary.
+Happy Sailing!
+</p>
