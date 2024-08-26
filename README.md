@@ -2,7 +2,8 @@
 This project provides a minimal setup for spinning up a small Google Kubernetes Engine (GKE) cluster using Terraform for a sample of Go and the GIN web framework, specifically tailored for development purposes.
 
 ## Purpose
-The primary goal of this project is to create a lightweight GKE cluster that developers can use to quickly deploy and test a Go application in a Kubernetes environment. This setup is intended only for development and testing purposes and not for production use.
+The primary goal of this project is to create a lightweight GKE cluster that developers can use to quickly deploy and test a Go application in a Kubernetes environment. This setup is intended only for development and testing purposes and not for production use. In this setup, it utilized Preemptible VMs, which is a low cost solution and comes with trade-off, it only last up to 24 hours after creation.
+
 
 ## Important Considerations for Production
 For production environments, additional configurations and security measures are required to ensure robustness and safety, including but not limited to:
