@@ -17,6 +17,10 @@ spec:
         image: gcr.io/{project_id}/go-gin-app:v1
         ports:
         - containerPort: 8080
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          runAsUser: 1000
         readinessProbe:
           httpGet:
             path: /health-check
@@ -30,3 +34,7 @@ spec:
           limits:
             memory: "512Mi"
             cpu: "500m"
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          runAsUser: 1000  # Specify a non-root user ID
